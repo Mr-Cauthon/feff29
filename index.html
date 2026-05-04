@@ -214,7 +214,6 @@ header {
   background: var(--header-bg);
   padding: 1.25rem 1.25rem 0;
   position: relative;
-  overflow: hidden;
 }
 
 /* Decorazione kanji nell'header */
@@ -234,11 +233,11 @@ header::before {
 /* Decorative SVG patterns */
 .header-deco {
   position: absolute;
-  right: 0; top: 0; bottom: 0;
-  width: 140px;
+  right: 0; top: 0;
+  width: 130px; height: 100%;
   pointer-events: none;
-  opacity: 0.18;
-  overflow: hidden;
+  opacity: 0.22;
+  overflow: visible;
 }
 .day-deco {
   position: absolute;
@@ -763,36 +762,45 @@ main { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
         <span class="next-time" id="nextFilmTime">—</span>
       </div>
       <nav class="day-nav" id="dayNav"></nav>
-      <svg class="header-deco" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid meet">
-  <!-- Wave pattern -->
-  <path d="M0 80 Q17 65 35 80 Q52 95 70 80 Q87 65 105 80 Q122 95 140 80" fill="none" stroke="#c0392b" stroke-width="1.2"/>
-  <path d="M0 90 Q17 75 35 90 Q52 105 70 90 Q87 75 105 90 Q122 105 140 90" fill="none" stroke="#c0392b" stroke-width="0.8"/>
-  <path d="M0 100 Q17 85 35 100 Q52 115 70 100 Q87 85 105 100 Q122 115 140 100" fill="none" stroke="#c0392b" stroke-width="0.5"/>
-  <!-- Cherry blossom top right -->
-  <g transform="translate(100, 25)">
-    <circle cx="0" cy="0" r="4" fill="#c0392b"/>
-    <ellipse cx="0" cy="-9" rx="3.5" ry="5.5" fill="#c0392b" transform="rotate(0)"/>
-    <ellipse cx="0" cy="-9" rx="3.5" ry="5.5" fill="#c0392b" transform="rotate(72)"/>
-    <ellipse cx="0" cy="-9" rx="3.5" ry="5.5" fill="#c0392b" transform="rotate(144)"/>
-    <ellipse cx="0" cy="-9" rx="3.5" ry="5.5" fill="#c0392b" transform="rotate(216)"/>
-    <ellipse cx="0" cy="-9" rx="3.5" ry="5.5" fill="#c0392b" transform="rotate(288)"/>
+      <svg class="header-deco" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main branch from top-right corner going down-left -->
+  <path d="M130 0 Q115 15 105 30 Q90 50 80 65" fill="none" stroke="#c0392b" stroke-width="1.8"/>
+  <path d="M105 30 Q118 28 125 22" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+  <path d="M90 50 Q103 45 110 38" fill="none" stroke="#b8860b" stroke-width="1"/>
+  <!-- Main blossom at branch tip -->
+  <g transform="translate(80,65)">
+    <circle cx="0" cy="0" r="5" fill="#c0392b"/>
+    <ellipse cx="0" cy="-11" rx="4" ry="7" fill="#c0392b"/>
+    <ellipse cx="0" cy="-11" rx="4" ry="7" fill="#c0392b" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-11" rx="4" ry="7" fill="#c0392b" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-11" rx="4" ry="7" fill="#c0392b" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-11" rx="4" ry="7" fill="#c0392b" transform="rotate(288)"/>
   </g>
-  <!-- Small blossom -->
-  <g transform="translate(75, 45)" opacity="0.6">
-    <circle cx="0" cy="0" r="2.5" fill="#b8860b"/>
-    <ellipse cx="0" cy="-6" rx="2.2" ry="3.5" fill="#b8860b" transform="rotate(0)"/>
-    <ellipse cx="0" cy="-6" rx="2.2" ry="3.5" fill="#b8860b" transform="rotate(72)"/>
-    <ellipse cx="0" cy="-6" rx="2.2" ry="3.5" fill="#b8860b" transform="rotate(144)"/>
-    <ellipse cx="0" cy="-6" rx="2.2" ry="3.5" fill="#b8860b" transform="rotate(216)"/>
-    <ellipse cx="0" cy="-6" rx="2.2" ry="3.5" fill="#b8860b" transform="rotate(288)"/>
+  <!-- Side blossom gold -->
+  <g transform="translate(125,22)" opacity="0.85">
+    <circle cx="0" cy="0" r="3.5" fill="#b8860b"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="5" fill="#b8860b"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="5" fill="#b8860b" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="5" fill="#b8860b" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="5" fill="#b8860b" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-8" rx="3" ry="5" fill="#b8860b" transform="rotate(288)"/>
   </g>
-  <!-- Branch -->
-  <path d="M110 0 Q100 20 90 35 Q80 50 75 45" fill="none" stroke="#b8860b" stroke-width="1.2"/>
-  <path d="M90 35 Q105 30 100 25" fill="none" stroke="#b8860b" stroke-width="0.8"/>
+  <!-- Small blossom on sub-branch -->
+  <g transform="translate(110,38)" opacity="0.7">
+    <circle cx="0" cy="0" r="3" fill="#b8860b"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" fill="#b8860b"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" fill="#b8860b" transform="rotate(72)"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" fill="#b8860b" transform="rotate(144)"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" fill="#b8860b" transform="rotate(216)"/>
+    <ellipse cx="0" cy="-7" rx="2.5" ry="4.5" fill="#b8860b" transform="rotate(288)"/>
+  </g>
   <!-- Falling petals -->
-  <ellipse cx="55" cy="30" rx="2" ry="3" fill="#c0392b" transform="rotate(30, 55, 30)" opacity="0.7"/>
-  <ellipse cx="30" cy="55" rx="1.5" ry="2.5" fill="#c0392b" transform="rotate(-20, 30, 55)" opacity="0.5"/>
-  <ellipse cx="120" cy="60" rx="1.5" ry="2.5" fill="#b8860b" transform="rotate(45, 120, 60)" opacity="0.4"/>
+  <ellipse cx="60" cy="40" rx="2.5" ry="4" fill="#c0392b" transform="rotate(25,60,40)" opacity="0.6"/>
+  <ellipse cx="45" cy="75" rx="2" ry="3" fill="#c0392b" transform="rotate(-15,45,75)" opacity="0.4"/>
+  <ellipse cx="95" cy="88" rx="2" ry="3" fill="#b8860b" transform="rotate(40,95,88)" opacity="0.5"/>
+  <!-- Waves at bottom -->
+  <path d="M0 96 Q16 86 33 96 Q49 106 65 96 Q81 86 98 96 Q114 106 130 96" fill="none" stroke="#c0392b" stroke-width="1.2"/>
+  <path d="M0 104 Q16 94 33 104 Q49 114 65 104 Q81 94 98 104 Q114 114 130 104" fill="none" stroke="#c0392b" stroke-width="0.7"/>
 </svg>
     </header>
   </div>
@@ -864,9 +872,9 @@ function updateCountdown() {
 }
 
 function enterApp() {
+  window._skipCountdown = true;
   document.getElementById('countdownScreen').classList.remove('visible');
   document.getElementById('appContainer').style.display = 'block';
-  localStorage.setItem('feff29_entered', '1');
 }
 
 // ── Avatar & Colors ────────────────────────────
@@ -1521,15 +1529,21 @@ function showToast(msg) {
 
 // ── Init ───────────────────────────────────────
 const now=new Date();
-const alreadyEntered=localStorage.getItem('feff29_entered')==='1';
 const duringFestival=now>=FEST_START&&now<FEST_END;
+const afterFestival=now>=FEST_END;
 
-if (duringFestival || alreadyEntered) {
+if (duringFestival || afterFestival) {
   document.getElementById('appContainer').style.display='block';
 } else {
-  document.getElementById('countdownScreen').classList.add('visible');
-  updateCountdown();
-  _countdownInterval=setInterval(updateCountdown,1000);
+  // Prima del festival: sempre countdown, "Accedi" vale solo per la sessione corrente in memoria
+  const _skipCd = window._skipCountdown === true;
+  if (_skipCd) {
+    document.getElementById('appContainer').style.display='block';
+  } else {
+    document.getElementById('countdownScreen').classList.add('visible');
+    updateCountdown();
+    _countdownInterval=setInterval(updateCountdown,1000);
+  }
 }
 
 if (localStorage.getItem('feff29_dark')==='1') {
